@@ -1,0 +1,29 @@
+﻿La génération a démarré 13/03/2014 23:30:13.
+     1>Projet "C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\projetVI_empreintes\projetVI_empreintes.vcxproj" sur le nœud 2 (build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Debug\projetVI_empreintes.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       CustomBuild:
+         Toutes les sorties sont à jour.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\4.8.5\include /I.\GeneratedFiles\Debug /IC:\Qt\4.8.5\include\QtCore /IC:\Qt\4.8.5\include\QtGui /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt projetvi_empreintes.cpp
+         projetvi_empreintes.cpp
+         Toutes les sorties sont à jour.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\Win32\Debug\\projetVI_empreintes.exe" /NOLOGO /LIBPATH:C:\Qt\4.8.5\lib qtmaind.lib QtCored4.lib QtGuid4.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\projetVI_empreintes.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\Win32\Debug\projetVI_empreintes.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\Win32\Debug\projetVI_empreintes.lib" /MACHINE:X86 Debug\moc_projetvi_empreintes.obj
+         Debug\moc_qximage.obj
+         Debug\qrc_projetvi_empreintes.obj
+         Debug\main.obj
+         Debug\projetvi_empreintes.obj
+         Debug\qximage.obj
+         LINK : C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\Win32\Debug\\projetVI_empreintes.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
+         projetVI_empreintes.vcxproj -> C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\Win32\Debug\projetVI_empreintes.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\Win32\Debug\\projetVI_empreintes.exe;#1" /manifest Debug\projetVI_empreintes.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\projetVI_empreintes.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\projetVI_empreintes.lastbuildstate".
+     1>Génération du projet "C:\Users\PC ESTIVAL\Documents\iut\sem4\vi\V.I-Patoune\projetVI_empreintes\projetVI_empreintes\projetVI_empreintes.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:01.57
