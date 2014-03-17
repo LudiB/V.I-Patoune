@@ -2,6 +2,9 @@
 
 VI_Empreintes::VI_Empreintes(QWidget *parent, Qt::WFlags flags)
 	: QMainWindow(parent, flags)
+	, DossierSourcesNoirEtBlanc ("..\\Resources\\DataBaseTrack\\")
+	, DossierSourcesImages ("..\\Resources\\DataBaseTrack\\Annimaux\\Rezize-170x200\\")
+	, Extention (".png")
 {
 	ui.setupUi(this);
 
@@ -20,9 +23,6 @@ VI_Empreintes::VI_Empreintes(QWidget *parent, Qt::WFlags flags)
 	similarityTab = new int[13];
 
 	Init();
-
-
-
 }
 
 VI_Empreintes::~VI_Empreintes()
@@ -44,6 +44,9 @@ void VI_Empreintes::Make_Connect()
 	//Sliders
 	connect(ui.MinSlid, SIGNAL(valueChanged(int)), this, SLOT(Thresh()));
 	connect(ui.MaxSlid, SIGNAL(valueChanged(int)), this, SLOT(Thresh()));
+
+	//Bouton de recherche dans la BD
+	connect(ui.pushBaseDonner, SIGNAL(clicked()), this, SLOT(DBResearch()));
 }
 
 void VI_Empreintes::Init()
@@ -73,6 +76,7 @@ void VI_Empreintes::Hide()
 	ui.OrigLabel -> hide();
 	ui.TrsLabel -> hide();
 	ui.AniLabel -> hide();
+	ui.QLabelNomAnimal -> hide();
 
 	//Inferface seuillage
 	ui.SeuilTitle -> hide();
@@ -83,6 +87,7 @@ void VI_Empreintes::Hide()
 
 	//Bouton
 	ui.BtnTrait -> hide();
+	ui.pushBaseDonner -> hide();
 
 	//Réinitialisation des Sliders
 	ui.MinSlid -> setValue(0);
@@ -95,22 +100,22 @@ void VI_Empreintes::Hide()
 
 void VI_Empreintes::CreateDataBase()
 {
-	QString DataRep_1 = "..\\Resources\\DataBaseTrack\\Blaireau.png";
-	QString DataRep_2 = "..\\Resources\\DataBaseTrack\\Chamois.png";
-	QString DataRep_3 = "..\\Resources\\DataBaseTrack\\Chat.png";
-	QString DataRep_4 = "..\\Resources\\DataBaseTrack\\Chien.png";
-	QString DataRep_5 = "..\\Resources\\DataBaseTrack\\Fouine.png";
-	QString DataRep_6 = "..\\Resources\\DataBaseTrack\\Genette.png";
-	QString DataRep_7 = "..\\Resources\\DataBaseTrack\\Hermine.png";
-	QString DataRep_8 = "..\\Resources\\DataBaseTrack\\Humain.png";
-	QString DataRep_9 = "..\\Resources\\DataBaseTrack\\Loup.png";
-	QString DataRep_10 = "..\\Resources\\DataBaseTrack\\Loutre.png";
-	QString DataRep_11 = "..\\Resources\\DataBaseTrack\\Lynx.png";
-	QString DataRep_12 = "..\\Resources\\DataBaseTrack\\Renard.png";
-	QString DataRep_13 = "..\\Resources\\DataBaseTrack\\Sanglier.png";
+	QString Blaireau = "Blaireau";
+	QString Chamois = "Chamois";
+	QString Chat = "Chat";
+	QString Chien = "Chien";
+	QString Fouine = "Fouine";
+	QString Genette = "Genette";
+	QString Hermine = "Hermine";
+	QString Humain = "Humain";
+	QString Loup = "Loup";
+	QString Loutre = "Loutre";
+	QString Lynx = "Lynx";
+	QString Renard = "Renard";
+	QString Sanglier = "Sanglier";
 
-	trackList << DataRep_1 << DataRep_2 << DataRep_3 << DataRep_4 << DataRep_5 << DataRep_6;
-	trackList << DataRep_7 << DataRep_8 << DataRep_9 << DataRep_10 << DataRep_11 << DataRep_12 << DataRep_13;
+	nomList << Blaireau << Chamois << Chat << Chien << Fouine << Genette;
+	nomList << Hermine << Humain << Loup << Loutre << Lynx << Renard << Sanglier;
 }
 
 void VI_Empreintes::DBResearch()
@@ -119,9 +124,9 @@ void VI_Empreintes::DBResearch()
 
 	ui.AniLabel -> show();
 	//Constitution du tableau
-	for( int i = 0; i < trackList.length(); i++ )
+	for( int i = 0; i < nomList.length(); i++ )
 	{
-		QImage *Src = new QImage(trackList[i]);
+		QImage *Src = new QImage(DossierSourcesNoirEtBlanc + nomList[i] + Extention);
 
 		int Similarity = 0;
 
@@ -170,8 +175,10 @@ void VI_Empreintes::DBResearch()
 void VI_Empreintes::ShowResult( int ind)
 {
 	ui.AnimaLabel -> show();
+	ui.QLabelNomAnimal -> show();
+	ui.QLabelNomAnimal -> setText(nomList[ind]);
 
-	AnImg = new QImage(trackList[ind]);
+	AnImg = new QImage(DossierSourcesImages + nomList[ind] + Extention);
 	repaint();
 }
 
@@ -231,6 +238,7 @@ void VI_Empreintes::StartThres()
 
 		ui.TrsLabel -> show();
 		ui.TransLabel -> show();
+		ui.pushBaseDonner -> show();
 
 	}
 	//Initialisation des sliders de thesh

@@ -40,7 +40,10 @@ private:
 	QPixmap* trpixmap;
 	QPixmap* anipixmap;
 
-	QStringList trackList;
+	QStringList nomList;
+	const QString DossierSourcesNoirEtBlanc;
+	const QString DossierSourcesImages;
+	const QString Extention;
 
 	int *similarityTab;
 
@@ -57,11 +60,11 @@ private:
 	void paintEvent(QPaintEvent * evt);
 
 	/*-- Slots --*/
-	private slots:
-		void Open();
-		void StartThres();
-		void Thresh();
-		void DBResearch();
+private slots:
+	void Open();
+	void StartThres();
+	void Thresh();
+	void DBResearch();
 };
 
 #endif // VI_EMPREINTES_H
