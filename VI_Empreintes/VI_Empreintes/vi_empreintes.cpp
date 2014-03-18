@@ -186,6 +186,9 @@ void VI_Empreintes::Open()
 {
 	QString ImgRep =  QFileDialog::getOpenFileName(this, tr("Choisir une empreinte"), MyRep + "\\Empreintes", tr("Tout fichier (*.*);;JPG (*.jpg);;PNG (*.png);;BMP (*.bmp)"));
 
+	if (ImgRep == "")
+		return;
+
 	//Libération de l'image si deja définie
 	if(Image != NULL)
 	{
