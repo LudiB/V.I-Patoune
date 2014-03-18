@@ -328,14 +328,12 @@
      <string>Fichier</string>
     </property>
     <addaction name="actionOuvrir"/>
-    <addaction name="actionFermer"/>
    </widget>
    <widget class="QMenu" name="menuA_Propos">
     <property name="title">
      <string>A Propos</string>
     </property>
     <addaction name="actionAide"/>
-    <addaction name="actionAutre"/>
    </widget>
    <widget class="QMenu" name="menuSearch">
     <property name="title">

@@ -1,0 +1,7 @@
+diff a/VI_Empreintes/VI_Empreintes/vi_empreintes.cpp b/VI_Empreintes/VI_Empreintes/vi_empreintes.cpp	(rejected hunks)
+@@ -191,5 +191,2 @@
+ 
+-	if (ImgRep == "")
+-		return;
+-
+ 	//Libération de l'image si deja définie

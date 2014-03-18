@@ -47,6 +47,9 @@ void VI_Empreintes::Make_Connect()
 
 	//Bouton de recherche dans la BD
 	connect(ui.pushBaseDonner, SIGNAL(clicked()), this, SLOT(DBResearch()));
+
+	//Bouton d'aide
+	connect(ui.actionAide, SIGNAL(triggered()), this, SLOT(Help()));
 }
 
 void VI_Empreintes::Init()
@@ -186,9 +189,6 @@ void VI_Empreintes::Open()
 {
 	QString ImgRep =  QFileDialog::getOpenFileName(this, tr("Choisir une empreinte"), MyRep + "\\Empreintes", tr("Tout fichier (*.*);;JPG (*.jpg);;PNG (*.png);;BMP (*.bmp)"));
 
-	if (ImgRep == "")
-		return;
-
 	//Libération de l'image si deja définie
 	if(Image != NULL)
 	{
@@ -265,6 +265,12 @@ void VI_Empreintes::Thresh()
 
 	repaint();
 
+}
+
+void VI_Empreintes::Help()
+{
+	//Utilisation de la methode statique de crétation du QMessageBox(obj,titre,msg)
+	QMessageBox::about(this, "Aide", "Cette application va vous permettre d'identifier des empreintes d'animaux. \n \n Pour cela vous devez respecter les etapes suivantes : \n \n - ouvrir votre image grace au menu Fichier \n \n - effectuer le traitement et essayer d'obtenir une image aussi nette que possible par seuillage \n \n - effectuer une recherche dans la base de donnees du logiciel.");
 }
 
 void VI_Empreintes::paintEvent(QPaintEvent * evt)

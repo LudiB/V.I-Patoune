@@ -12,6 +12,7 @@
 #include <QPixmap>
 #include <QPoint>
 #include <QFile>
+#include <QMessageBox>
 
 
 
@@ -65,6 +66,7 @@ private slots:
 	void StartThres();
 	void Thresh();
 	void DBResearch();
+	void Help();
 };
 
 #endif // VI_EMPREINTES_H
