@@ -269,21 +269,21 @@ void VI_Empreintes::paintEvent(QPaintEvent * evt)
 	if (Image != NULL)
 	{
 		*pixmap = QPixmap::fromImage(*Image);
-
+		ui.OriginaLabel -> setGeometry(0, 20, Image->width(), Image->height());
 		ui.OriginaLabel -> setPixmap( *pixmap );
 	}
 
 	if (TrfImg != NULL )
 	{
 		*trpixmap = QPixmap::fromImage(*TrfImg);
-
+		ui.TransLabel -> setGeometry(321, 20, Image->width(), Image->height());
 		ui.TransLabel -> setPixmap( *trpixmap );
 	}
 
 	if(AnImg != NULL)
 	{
 		*anipixmap = QPixmap::fromImage(*AnImg);
-
+		ui.AnimaLabel -> setGeometry(642, 20, Image->width(), Image->height());
 		ui.AnimaLabel -> setPixmap(*anipixmap);
 	}
 	
