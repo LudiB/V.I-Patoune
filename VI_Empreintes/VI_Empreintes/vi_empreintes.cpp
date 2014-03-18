@@ -92,10 +92,6 @@ void VI_Empreintes::Hide()
 	ui.BtnTrait -> hide();
 	ui.pushBaseDonner -> hide();
 
-	//Réinitialisation des Sliders
-	ui.MinSlid -> setValue(0);
-	ui.MaxSlid -> setValue(255);
-
 	//Images
 	ui.TransLabel -> hide();
 	ui.AnimaLabel -> hide();
@@ -204,6 +200,10 @@ void VI_Empreintes::Open()
 	//Affectation de l'image
 	Image = new QImage(ImgRep);
 
+	//Réinitialisation des Sliders
+	ui.MinSlid -> setValue(0);
+	ui.MaxSlid -> setValue(255);
+
 	//Image en N&B
 	QXImage *temp = new QXImage(Image);
 	temp -> toGrayScale();
@@ -273,7 +273,14 @@ void VI_Empreintes::Thresh()
 void VI_Empreintes::Help()
 {
 	//Utilisation de la methode statique de crétation du QMessageBox(obj,titre,msg)
-	QMessageBox::about(this, "Aide", "Cette application va vous permettre d'identifier des empreintes d'animaux. \n \n Pour cela vous devez respecter les etapes suivantes : \n \n - ouvrir votre image grace au menu Fichier \n \n - effectuer le traitement et essayer d'obtenir une image aussi nette que possible par seuillage \n \n - effectuer une recherche dans la base de donnees du logiciel.");
+	QMessageBox aide(this);
+	aide.setText("<b>Aide</b>");
+	aide.setInformativeText("Cette application va vous permettre d'identifier des empreintes d'animaux. \n"
+		"\n Pour cela vous devez respecter les etapes suivantes : \n \n - ouvrir votre image grace au menu Fichier \n"
+		"\n - effectuer le traitement et essayer d'obtenir une image aussi nette que possible par seuillage \n"
+		"\n - effectuer une recherche dans la base de donnees du logiciel.");
+	aide.setIcon(QMessageBox::Information);
+	aide.exec();
 }
 
 void VI_Empreintes::paintEvent(QPaintEvent * evt)
